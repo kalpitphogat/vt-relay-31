@@ -7,5 +7,5 @@ const (
 	// fixNoAirBoost: practice mode, no boost while airborne (a jet climb) except when escaping or dodging.
 	fixNoAirBoost = true
 	// fixFFAUntil: a death we did not cause switches to free-for-all play only before this match time (s); 0 = any time.
-	fixFFAUntil = 60.0
+	fixFFAUntil = 90.0
 )
