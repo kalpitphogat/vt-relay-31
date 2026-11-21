@@ -149,7 +149,7 @@ func (b *Brain) kyExploreGoal(o *Obs) (float64, float64, bool) {
 
 // kyoto-max v34-v41 lineage on the squad (practice) parameters (0/false = base).
 const (
-	kvFightBoost  = 42.0   // boost-speed jinking in fights above this energy (v38: 40)
+	kvFightBoost  = 58.0   // boost-speed jinking in fights above this energy (v38: 40)
 	kvDodgeBoost  = 24.0   // boost on every dodge above this energy (v39: 25)
 	kvThreatBoost = 30.0   // boost whenever threatened and moving above this energy (v40: 30)
 	kvBackstab    = 40.0   // target bonus for foes showing their back, rear damage in lethal release (v36: 40)
