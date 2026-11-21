@@ -7,8 +7,8 @@ import (
 	"sort"
 )
 
-// debug logging is enabled by setting MECH_DEBUG to anything non-empty.
-var debug = os.Getenv("MECH_DEBUG") != ""
+// debug logging is enabled by setting VT_DEBUG to anything non-empty.
+var debug = os.Getenv("VT_DEBUG") != ""
 
 // Weapon / module kinds the bot knows how to use.
 var knownKinds = map[string]bool{"gun": true, "laser": true, "laser_charge": true, "lightning": true,
@@ -91,7 +91,7 @@ func (o *omap[T]) values() []T {
 // ---------------------------------------------------------------------------
 // Tracked entities
 
-// Track is our memory of another mech or NPC.
+// Track is our memory of another unit or NPC.
 type Track struct {
 	id       int
 	kind     string
@@ -301,7 +301,7 @@ func NewBot(h *Hello) *Bot {
 	return b
 }
 
-// scale is the mech size multiplier for a given cube count.
+// scale is the unit size multiplier for a given cube count.
 func (b *Bot) scale(cubes float64) float64 {
 	return 1 + cubes*b.cfg.num(b.cfg.Cubes, "size_per_cube", 0.05)
 }
@@ -1948,7 +1948,7 @@ func (b *Bot) ghostCover(o *Obs, me *Self, foes []*Track, tgt *Track, busy bool,
 	return b.coverMove(o, append([]*Track{b.ghostTrack(me)}, foes...))
 }
 
-// listen remembers recent sounds that don't come from a visible mech.
+// listen remembers recent sounds that don't come from a visible unit.
 func (b *Bot) listen(o *Obs) {
 	keep := b.heard[:0]
 	for _, h := range b.heard {

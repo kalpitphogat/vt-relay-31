@@ -426,7 +426,7 @@ func (g *Grid) standHeight(x, y float64) (float64, bool) {
 	return top, top-h > 1.5
 }
 
-// standable checks the mech body (radius ~2.6, height 1.2..9) fits at (x, y, h).
+// standable checks the unit body (radius ~2.6, height 1.2..9) fits at (x, y, h).
 func (g *Grid) standable(x, y, h float64) bool {
 	w := g.w
 	const m = 2.6

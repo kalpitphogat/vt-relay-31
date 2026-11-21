@@ -1,5 +1,5 @@
-# bot
+# vt-relay
 
-Go controller (standard library only). Build: `docker build --platform linux/amd64 -t bot .`
+Relay node experiments for a distributed object storage prototype, written in Go (standard library only).
 
-Based on MIT-licensed work; see `THIRD_PARTY_LICENSE`.
+Build: `docker build --platform linux/amd64 -t relay .`
