@@ -5,7 +5,7 @@ import "math"
 // Tweaks on top of the base brain. Zero values keep the base behaviour.
 const (
 	// seedSalt shifts the RNG seed. Practice seeds are fixed, so a new salt is a new sample of the same strategy.
-	seedSalt int64 = 0
+	seedSalt int64 = 1
 
 	// healHold: practice (squad) mode only. After a fight, while no engaged foe is in view and HP is below this
 	// fraction, stop looting and farming (dealing damage resets the regen timer), stand still (silent) or take
@@ -153,7 +153,7 @@ const (
 	kvDodgeBoost  = 25.0   // boost on every dodge above this energy (v39: 25)
 	kvThreatBoost = 30.0   // boost whenever threatened and moving above this energy (v40: 30)
 	kvBackstab    = 40.0   // target bonus for foes showing their back, rear damage in lethal release (v36: 40)
-	kvSpeedUp     = true // servos/jets/reactor right after plating and armor (v41)
+	kvSpeedUp     = false // servos/jets/reactor right after plating and armor (v41)
 )
 
 func kyotoSquad(p Params) Params {
