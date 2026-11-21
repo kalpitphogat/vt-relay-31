@@ -11,7 +11,7 @@ import "math"
 // Tweaks on top of the base brain. Zero values keep the base behaviour.
 const (
 	// seedSalt shifts the RNG seed. Practice seeds are fixed, so a new salt is a new sample of the same strategy.
-	seedSalt int64 = 399
+	seedSalt int64 = 769
 
 	// healHold: practice (squad) mode only. After a fight, while no engaged foe is in view and HP is below this
 	// fraction, stop looting and farming (dealing damage resets the regen timer), stand still (silent) or take
@@ -22,15 +22,15 @@ const (
 // Ideas from kyoto-max (practice/squad mode only; false = base behaviour).
 const (
 	// kyEarly: before 200 s with < 10 cubes, collect cubes within 150 m and farm crates/drones down to 40% HP.
-	kyEarly = true
+	kyEarly = false
 	// kyExplore: in that early phase, with nothing to loot, walk to unvisited 100 m grid points inside the zone.
-	kyExplore = true
+	kyExplore = false 
 	// kyBoost: boost when threatened (energy > 30) and when closing on a target more than 30 m away (energy > 40).
-	kyBoost = true
+	kyBoost = false
 	// kyUpgrades: upgrade order plating, armor, nanites, servos, jets, laser, reactor, gun, ...
-	kyUpgrades = true
+	kyUpgrades = false
 	// kyHoldFire: below 60% HP, do not shoot a healthy target more than 120 m away (stay hidden, let regen start).
-	kyHoldFire = true
+	kyHoldFire = false
 	// kyListen: when idle, look toward a recent nearby sound that no visible mech explains.
 	kyListen = true
 )
@@ -151,4 +151,32 @@ func (b *Brain) kyExploreGoal(o *Obs) (float64, float64, bool) {
 		}
 	}
 	return bx, by, found
+}
+
+// kyoto-max v34-v41 lineage on the squad (practice) parameters (0/false = base).
+const (
+	kvFightBoost  = 40.0   // boost-speed jinking in fights above this energy (v38: 40)
+	kvDodgeBoost  = 25.0   // boost on every dodge above this energy (v39: 25)
+	kvThreatBoost = 30.0   // boost whenever threatened and moving above this energy (v40: 30)
+	kvBackstab    = 40.0   // target bonus for foes showing their back, rear damage in lethal release (v36: 40)
+	kvSpeedUp     = true // servos/jets/reactor right after plating and armor (v41)
+)
+
+func kyotoSquad(p Params) Params {
+	if kvFightBoost > 0 {
+		p.FightBoost = kvFightBoost
+	}
+	if kvDodgeBoost > 0 {
+		p.DodgeBoost = kvDodgeBoost
+	}
+	if kvThreatBoost > 0 {
+		p.ThreatBoost = kvThreatBoost
+	}
+	if kvBackstab > 0 {
+		p.Backstab = kvBackstab
+	}
+	if kvSpeedUp {
+		p.SpeedUp = true
+	}
+	return p
 }
