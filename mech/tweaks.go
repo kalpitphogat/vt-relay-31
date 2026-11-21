@@ -8,5 +8,5 @@ const (
 	// healHold: practice (squad) mode only. After a fight, while no engaged foe is in view and HP is below this
 	// fraction, stop looting and farming (dealing damage resets the regen timer), stand still (silent) or take
 	// cover, and regenerate before the next fight. 0 = off.
-	healHold = 0.0
+	healHold = 0.95
 )
