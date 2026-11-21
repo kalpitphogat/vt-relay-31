@@ -5,7 +5,7 @@ const (
 	// gearNoFirst: until we hold a laser (and before gearLateS), do not start fights with house bots that have not hit us
 	// in the last 6 s, carry no laser and are farther than 45 m: arm up first.
 	gearNoFirst = true
-	gearLateS   = 180.0
+	gearLateS   = 120.0
 	// gearLaserSeek: how far (m) we travel for a laser pickup in practice mode (6.25: 240).
 	gearLaserSeek = 300.0
 )
@@ -20,4 +20,4 @@ const (
 
 // gearFightGrab: during a fight, while the second weapon slot is empty, go take any wanted weapon pickup within
 // this many metres (automata gear_grab_r). 0 = off.
-const gearFightGrab = 0.0
+const gearFightGrab = 40.0
