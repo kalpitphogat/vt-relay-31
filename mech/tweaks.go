@@ -151,7 +151,7 @@ func (b *Brain) kyExploreGoal(o *Obs) (float64, float64, bool) {
 const (
 	kvFightBoost  = 34.0   // boost-speed jinking in fights above this energy (v38: 40)
 	kvDodgeBoost  = 29.0   // boost on every dodge above this energy (v39: 25)
-	kvThreatBoost = 37.0   // boost whenever threatened and moving above this energy (v40: 30)
+	kvThreatBoost = 23.0   // boost whenever threatened and moving above this energy (v40: 30)
 	kvBackstab    = 40.0   // target bonus for foes showing their back, rear damage in lethal release (v36: 40)
 	kvSpeedUp     = true // servos/jets/reactor right after plating and armor (v41)
 )
