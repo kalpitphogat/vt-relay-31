@@ -23,4 +23,4 @@ const (
 const gearFightGrab = 40.0
 
 // fixCubeLevel: in-fight cube detours skip cubes more than 3.5 m above or below us (cannot be picked up).
-const fixCubeLevel = true
+const fixCubeLevel = false
