@@ -13,7 +13,7 @@ const (
 // More laser-first ideas from automata (practice mode only; 0 = off).
 const (
 	// gearFightLaser: during a fight, without a laser, go take a known laser pickup within this many metres.
-	gearFightLaser = 0.0
+	gearFightLaser = 70.0
 	// gearEmptySeek: while the second weapon slot is empty, look for any wanted weapon within this many metres.
 	gearEmptySeek = 250.0
 )
