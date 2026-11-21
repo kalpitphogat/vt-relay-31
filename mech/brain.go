@@ -1975,7 +1975,7 @@ func squadParams(p Params) Params {
 	p.HPw = 0.18
 	p.HPw = 0.21
 
-	return p
+	return recoveredSquad(p)
 }
 
 func (b *Brain) cubeCap() int {
