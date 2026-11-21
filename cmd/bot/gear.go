@@ -27,5 +27,5 @@ const (
 	// loseK scales the "losing, break off" HP thresholds (lower = keep fighting longer).
 	loseK = 1.0
 	// fightCubeR replaces the in-fight cube detour radius (6.38: 70 m).
-	fightCubeR = 50.0
+	fightCubeR = 0.0
 )
