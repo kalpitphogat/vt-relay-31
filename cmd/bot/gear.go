@@ -25,7 +25,7 @@ const gearFightGrab = 40.0
 // Practice-mode tuning from public bots (1.0 / 0 = 6.38 behaviour).
 const (
 	// loseK scales the "losing, break off" HP thresholds (lower = keep fighting longer).
-	loseK = 0.3
+	loseK = 1.0
 	// fightCubeR replaces the in-fight cube detour radius (6.38: 70 m).
-	fightCubeR = 0.0
+	fightCubeR = 50.0
 )
