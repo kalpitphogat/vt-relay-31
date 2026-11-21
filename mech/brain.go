@@ -169,6 +169,7 @@ func NewBrain(h *Hello, w *World) *Brain {
 	if seed == 0 {
 		seed = int64(h.Slot) + 1
 	}
+	seed += seedSalt * 7919
 	return &Brain{
 		W: w, Cfg: h.Config, Slot: h.Slot, rng: rand.New(rand.NewSource(seed)), P: DefaultParams(),
 		tracks: map[int]*Track{}, npcs: map[int]*Track{}, crates: map[int]*known{}, cubes: map[int]*known{},
@@ -795,6 +796,11 @@ func (b *Brain) step(o *Obs, act *Action) {
 	case zoneShould && zdist > 2:
 		mx, my = b.travel(me, zgx, zgy)
 		mode = "zone"
+	case healHold > 0 && b.pracOn && foe == nil && !danger && !late && hpFrac < healHold && now-b.lastHurt > 1.5 && b.npcHurt < now-3:
+		mode = "heal"
+		if exposed && b.coverMove(o, seen, &mx, &my) {
+			mode = "heal:cover"
+		}
 	default:
 		lc := b.chooseLoot(o, hpFrac, danger)
 		if lc != nil {
