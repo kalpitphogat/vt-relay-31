@@ -7,5 +7,5 @@ const (
 	gearNoFirst = true
 	gearLateS   = 100.0
 	// gearLaserSeek: how far (m) we travel for a laser pickup in practice mode (6.25: 240).
-	gearLaserSeek = 310.0
+	gearLaserSeek = 260.0
 )
