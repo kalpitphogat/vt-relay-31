@@ -102,6 +102,9 @@ type Brain struct {
 	otherDead          int
 	stickID            int
 	stickAt, loseAt    float64
+
+	trail [][2]float64
+	heard []heardSound
 }
 
 type Params struct {
@@ -504,6 +507,10 @@ func (b *Brain) step(o *Obs, act *Action) {
 	b.now = o.T
 	now := o.T
 	b.observe(o)
+	b.listen(o)
+	if len(b.trail) == 0 || hyp(b.trail[len(b.trail)-1][0]-me.Pos[0], b.trail[len(b.trail)-1][1]-me.Pos[1]) > 40 {
+		b.trail = append(b.trail, [2]float64{me.Pos[0], me.Pos[1]})
+	}
 	st := &me.Stats
 	x, y, zf := me.Pos[0], me.Pos[1], me.Pos[2]
 	z := &o.Zone
@@ -511,6 +518,9 @@ func (b *Brain) step(o *Obs, act *Action) {
 
 	if o.Offer != nil && len(o.Offer.Choices) > 0 {
 		p := pickUpgrade(o.Offer, b.P.LaserUp, b.P.NanoUp, b.P.SpeedUp)
+		if kyUpgrades && b.pracOn {
+			p = pickFrom(o.Offer, kyotoUpgradeOrder)
+		}
 		act.Pick = &p
 	}
 
@@ -837,6 +847,9 @@ func (b *Brain) step(o *Obs, act *Action) {
 					mx, my = 0, 0
 				}
 			}
+		} else if ex, ey, ok := b.kyExploreGoal(o); kyExplore && b.kyEarlyPhase(o) && !danger && hpFrac > 0.5 && ok {
+			mx, my = b.travel(me, ex, ey)
+			mode = "explore"
 		} else if zdist > 3 && (!b.P.Ghost || z.NextRadius <= 30) {
 			mx, my = b.travel(me, zgx, zgy)
 			mode = "zone-walk"
@@ -871,6 +884,15 @@ func (b *Brain) step(o *Obs, act *Action) {
 			if b.P.DodgeBoost > 0 && me.Energy > b.P.DodgeBoost {
 				boost = true
 			}
+		}
+	}
+	if kyBoost && b.pracOn && mode != "unstuck" && mode != "escape" && (mx != 0 || my != 0) && (light == nil || me.Energy > 60) &&
+		(laser == nil || laser.Charge <= 0) {
+		if (danger || now-b.lastHurt < 2.5) && me.Energy > 30 {
+			boost = true
+		}
+		if mode == "fight" && foe != nil && foe == target && foe.Dist > 30 && me.Energy > 40 {
+			boost = true
 		}
 	}
 	if b.P.ThreatBoost > 0 && me.Energy > b.P.ThreatBoost && (foe != nil || now-b.lastHurt < 2.5) && (light == nil || me.Energy > 60) {
@@ -1068,6 +1090,14 @@ func (b *Brain) step(o *Obs, act *Action) {
 
 	}
 
+	if kyHoldFire && b.pracOn && target != nil && hpFrac < 0.6 && target.Dist > 120 && now-b.lastHurt > 5 && target.HP > 0.3*target.MaxHP {
+		for i, w := range me.Weapons {
+			if i < 2 && w != nil && w.Kind != "laser" {
+				act.Fire[i] = false
+			}
+		}
+	}
+
 	if target == nil && foe != nil {
 
 		for i, w := range me.Weapons {
@@ -1094,6 +1124,8 @@ func (b *Brain) step(o *Obs, act *Action) {
 			aim[0] = b.npcBearing
 		case now-b.lastHurt < 2.5:
 			aim[0] = b.hurtBearing
+		case kyListen && b.pracOn && b.lastHeard() != nil:
+			aim[0] = b.lastHeard().bearing
 		case mx != 0 || my != 0:
 			aim[0] = math.Atan2(my, mx) + 1.15*math.Sin(now*1.3)
 		default:
@@ -1741,13 +1773,20 @@ func (b *Brain) chooseLoot(o *Obs, hpFrac float64, danger bool) *lootChoice {
 		cubeV = 25
 	}
 	for _, c := range b.cubes {
-		if hyp(c.Pos[0]-x, c.Pos[1]-y) < math.Max(60, b.P.LootRadius*0.7) {
+		cr := math.Max(60, b.P.LootRadius*0.7)
+		if kyEarly && b.kyEarlyPhase(o) {
+			cr = 150
+		}
+		if hyp(c.Pos[0]-x, c.Pos[1]-y) < cr {
 			consider("cube", c.ID, c.Pos, cubeV)
 		}
 	}
 	farmHP := 0.7
 	if b.P.FarmHP > 0 {
 		farmHP = b.P.FarmHP
+	}
+	if kyEarly && b.kyEarlyPhase(o) {
+		farmHP = 0.4
 	}
 	if hpFrac > farmHP && !danger && now < b.P.CrateUntil {
 		for _, c := range b.crates {
@@ -1986,7 +2025,7 @@ func squadParams(p Params) Params {
 	p.HPw = 0.18
 	p.HPw = 0.21
 
-	return p
+	return kyotoSquad(p)
 }
 
 func (b *Brain) cubeCap() int {
