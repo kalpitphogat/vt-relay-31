@@ -186,6 +186,9 @@ func squad(p Params) Params {
 	p.laserRange, p.lootRadius, p.crateUntil, p.stick = 120, 150, 1e9, 60
 	p.hpw, p.lowBonus, p.maxTarget, p.loseRule = 0.2, 100, 240, true
 	p.fightLoot, p.farmHP, p.laserSeek, p.laserUp = 70, 0.5, 240, true
+	if gearLaserSeek > 0 {
+		p.laserSeek = gearLaserSeek
+	}
 	return p
 }
 
@@ -1453,6 +1456,10 @@ func (b *Bot) step(o *Obs, act *Action) {
 			t.engage = true
 		} else if facing && t.dist < 190 {
 			t.engage = true
+		}
+		if gearNoFirst && b.pracOn && !b.notPractice && laser == nil && now < gearLateS && !endgame &&
+			t.engage && now-t.hitMe >= 6 && t.dist > 45 && !t.has("laser") {
+			t.engage = false
 		}
 		if t.engage && !t.los && t.dist < maxT && (near == nil || near.dist > t.dist) {
 			near = t
