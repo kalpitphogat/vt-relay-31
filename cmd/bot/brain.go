@@ -458,7 +458,7 @@ func (b *Bot) observe(o *Obs) {
 	} else {
 		b.otherDead = 0
 	}
-	if b.otherDead >= 5 {
+	if b.otherDead >= 5 && (fixFFAUntil <= 0 || o.T < fixFFAUntil) {
 		b.notPractice = true
 	}
 	prac := b.base.practice && !b.notPractice && now > 20
@@ -1638,6 +1638,9 @@ func (b *Bot) step(o *Obs, act *Action) {
 			}
 			var cp []float64
 			for _, c := range b.cubes.values() {
+				if fixCubeLevel && math.Abs(c.pos[2]-z) > 3.5 {
+					continue
+				}
 				if d := hyp(c.pos[0]-x, c.pos[1]-y); d < r {
 					r, cp = d, c.pos
 				}
@@ -1935,6 +1938,9 @@ func (b *Bot) step(o *Obs, act *Action) {
 	}
 
 	act.Move = [2]float64{mx, my}
+	if fixNoAirBoost && b.pracOn && !me.Grounded && mode != "escape" && mode != "dodge" {
+		boost = false
+	}
 	act.Boost = boost && (mx != 0 || my != 0)
 	b.mode = mode
 }
