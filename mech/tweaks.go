@@ -16,17 +16,17 @@ const (
 // Ideas from kyoto-max (practice/squad mode only; false = base behaviour).
 const (
 	// kyEarly: before 200 s with < 10 cubes, collect cubes within 150 m and farm crates/drones down to 40% HP.
-	kyEarly = true
+	kyEarly = false
 	// kyExplore: in that early phase, with nothing to loot, walk to unvisited 100 m grid points inside the zone.
 	kyExplore = true
 	// kyBoost: boost when threatened (energy > 30) and when closing on a target more than 30 m away (energy > 40).
-	kyBoost = true
+	kyBoost = false
 	// kyUpgrades: upgrade order plating, armor, nanites, servos, jets, laser, reactor, gun, ...
-	kyUpgrades = true
+	kyUpgrades = false
 	// kyHoldFire: below 60% HP, do not shoot a healthy target more than 120 m away (stay hidden, let regen start).
-	kyHoldFire = true
+	kyHoldFire = false
 	// kyListen: when idle, look toward a recent nearby sound that no visible mech explains.
-	kyListen = true
+	kyListen = false
 )
 
 var kyotoUpgradeOrder = []string{"plating", "armor", "nanites", "servos", "jets", "laser_damage", "laser_charge", "reactor",
