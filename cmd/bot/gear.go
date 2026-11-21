@@ -20,7 +20,7 @@ const (
 
 // gearFightGrab: during a fight, while the second weapon slot is empty, go take any wanted weapon pickup within
 // this many metres (automata gear_grab_r). 0 = off.
-const gearFightGrab = 55.0
+const gearFightGrab = 30.0
 
 // fixCubeLevel: in-fight cube detours skip cubes more than 3.5 m above or below us (cannot be picked up).
 const fixCubeLevel = false
