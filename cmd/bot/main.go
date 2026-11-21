@@ -5,17 +5,16 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-
-	"mechbot/mech"
 )
 
+// main speaks a JSON-lines protocol on stdin/stdout.
 func main() {
-	lines := make(chan []byte, 256)
+	lines := make(chan []byte, 1024)
 	go func() {
 		r := bufio.NewReaderSize(os.Stdin, 1<<20)
 		for {
 			line, err := r.ReadBytes('\n')
-			if len(line) > 0 {
+			if len(line) > 1 {
 				lines <- line
 			}
 			if err != nil {
@@ -24,6 +23,7 @@ func main() {
 			}
 		}
 	}()
+
 	out := bufio.NewWriterSize(os.Stdout, 1<<16)
 	send := func(v any) {
 		b, err := json.Marshal(v)
@@ -34,16 +34,16 @@ func main() {
 		out.WriteByte('\n')
 		out.Flush()
 	}
-	var brain *mech.Brain
-	var probe struct {
-		Type string `json:"type"`
-	}
+
+	var bot *Bot
+	var lastAim [2]float64
 	for {
-		first, ok := <-lines
+		line, ok := <-lines
 		if !ok {
 			return
 		}
-		batch := [][]byte{first}
+		// Drain everything queued so we only act on the newest observation.
+		batch := [][]byte{line}
 	drain:
 		for {
 			select {
@@ -56,47 +56,38 @@ func main() {
 				break drain
 			}
 		}
+
 		var latest []byte
 		for _, raw := range batch {
-			probe.Type = ""
-			if json.Unmarshal(raw, &probe) != nil {
+			var head struct {
+				Type string `json:"type"`
+			}
+			if json.Unmarshal(raw, &head) != nil {
 				continue
 			}
-			switch probe.Type {
+			switch head.Type {
 			case "hello":
-				var h mech.Hello
-				if err := json.Unmarshal(raw, &h); err != nil {
-					fmt.Fprintln(os.Stderr, "hello:", err)
+				var h Hello
+				if json.Unmarshal(raw, &h) == nil {
+					bot = NewBot(&h)
 				}
-				dir := h.Map.Dir
-				if dir == "" {
-					dir = "/arena"
-				}
-				w, err := mech.LoadWorld(dir)
-				if err != nil {
-					fmt.Fprintln(os.Stderr, "map:", err, "- playing on a flat map")
-					w = mech.FlatWorld()
-				}
-				brain = mech.NewBrain(&h, w)
-				send(map[string]string{"type": "ready", "name": "ITP"})
+				send(map[string]string{"type": "ready", "name": "dilksh"})
 			case "obs":
 				latest = raw
 			case "end":
 				return
 			}
 		}
-		if latest == nil {
+		if latest == nil || bot == nil {
 			continue
 		}
-		var o mech.Obs
-		if err := json.Unmarshal(latest, &o); err != nil || brain == nil {
-			var t struct {
-				Tick int `json:"tick"`
-			}
-			json.Unmarshal(latest, &t)
-			send(mech.Action{Tick: t.Tick})
+		var o Obs
+		if err := json.Unmarshal(latest, &o); err != nil {
+			fmt.Fprintln(os.Stderr, "bad obs:", err)
 			continue
 		}
-		send(brain.Act(&o))
+		act := bot.Act(&o, lastAim)
+		lastAim = act.Aim
+		send(act)
 	}
 }
