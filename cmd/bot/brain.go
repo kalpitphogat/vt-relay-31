@@ -272,6 +272,7 @@ func NewBot(h *Hello) *Bot {
 	if seed == 0 {
 		seed = h.Slot + 1
 	}
+	seed += int(seedSalt) * 7919
 	b := &Bot{cfg: h.Config, rng: newXorshift(uint64(seed)), P: defaults(),
 		tracks: newOmap[*Track](), npcs: newOmap[*Track](), crates: newOmap[*thing](), cubes: newOmap[*thing](), pickups: newOmap[*thing](),
 		bad: map[int]float64{}, routeAt: -99, strafe: 1, coverAt: -99, coverFailAt: -99, lastHurt: -100, lootID: -1,
