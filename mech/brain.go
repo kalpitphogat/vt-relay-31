@@ -169,6 +169,7 @@ func NewBrain(h *Hello, w *World) *Brain {
 	if seed == 0 {
 		seed = int64(h.Slot) + 1
 	}
+	seed += seedSalt * 7919
 	return &Brain{
 		W: w, Cfg: h.Config, Slot: h.Slot, rng: rand.New(rand.NewSource(seed)), P: DefaultParams(),
 		tracks: map[int]*Track{}, npcs: map[int]*Track{}, crates: map[int]*known{}, cubes: map[int]*known{},
