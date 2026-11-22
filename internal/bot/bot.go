@@ -297,7 +297,7 @@ func DefaultParams() Params {
 		PlinkMaxDPS:       60,
 		HuntRange:         165,
 		HuntRangeLaser:    257,
-		KiteMin:        124,
+		KiteMin:        171,
 		KiteMax:        251,
 		PatientCubes:   10,
 		PatientRange:   75,
