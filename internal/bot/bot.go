@@ -261,7 +261,7 @@ func DefaultParams() Params {
 		// only move from before 30 s to after it: about +0.1 points by the real-match index. Against
 		// the practice squad it costs 0.4, hence the SlotRule it would need.
 		ShyRange:          446,
-		ShyLaser:          45,
+		ShyLaser:          29,
 		ShyMem:            4.46,
 		// RetreatRunMax 50 / RetreatRunLaser 90 (variant b-standrun) is not on: the real matches favour it
 		// (one attacker inside 60 m, shot back: alive 20 s later 35% staying against 23% running),
@@ -273,7 +273,7 @@ func DefaultParams() Params {
 		CoverMinRange:     40,
 		CoverEdgeAdv:      2.32,
 		PeekCover:         25,
-		PeekReach:         10,
+		PeekReach:         6,
 		PeekMinRange:      28,
 		RoofCoverHold:     5.08,
 		RoofStandCheck:    true,
