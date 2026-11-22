@@ -231,7 +231,7 @@ func DefaultParams() Params {
 		HideStick:      20,
 		StealthFightRange: 205,
 		QuietHoldS:        3,
-		LaserValue:        4.71,
+		LaserValue:        3.67,
 		LightningValue:    2.6,
 		ArmSwapMin:        0.55,
 		HitModel:          1,
@@ -246,7 +246,7 @@ func DefaultParams() Params {
 		BrawlLootRadius:   121,
 		BrawlWantCubes:    10, // stats stop growing at 10 cubes; size (and so how easy we are to hit) does not
 		AvoidRange:        85,
-		AvoidCover:        34,
+		AvoidCover:        21,
 		ZoneSlack:         4.08,
 		CoverFirst:        false,
 		NoMortar:          true, // a laser hit on a mortar carrier does 60% more (seen: 1,024 health gone in 0.7 s)
