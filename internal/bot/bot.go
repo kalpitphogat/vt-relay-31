@@ -201,7 +201,7 @@ func DefaultParams() Params {
 		LootRadius:    118,
 		WantCubes:     15,
 		DropGreed:     0.5,
-		Hunt:          true,
+		Hunt:          false,
 		PracticeAware: false,
 		Salt:          8,
 		// SlotRule stays off: the track page says the practice slot varies each match
