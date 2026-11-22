@@ -241,7 +241,7 @@ func DefaultParams() Params {
 		Brawl:             true,
 		AvoidAdv:          1.25,
 		BrawlEngage:       1.3,
-		BrawlDisengage:    0.75,
+		BrawlDisengage:    1.08,
 		BrawlHunt:         false,
 		BrawlLootRadius:   220,
 		BrawlWantCubes:    10, // stats stop growing at 10 cubes; size (and so how easy we are to hit) does not
@@ -297,7 +297,7 @@ func DefaultParams() Params {
 		PlinkMaxDPS:       60,
 		HuntRange:         130,
 		HuntRangeLaser:    130,
-		KiteMin:        130,
+		KiteMin:        170,
 		KiteMax:        190,
 		PatientCubes:   10,
 		PatientRange:   70,
