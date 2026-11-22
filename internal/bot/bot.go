@@ -273,7 +273,7 @@ func DefaultParams() Params {
 		CoverMinRange:     40,
 		CoverEdgeAdv:      2.08,
 		PeekCover:         25,
-		PeekReach:         9,
+		PeekReach:         12.86,
 		PeekMinRange:      37,
 		RoofCoverHold:     4.63,
 		RoofStandCheck:    true,
