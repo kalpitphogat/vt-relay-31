@@ -195,7 +195,7 @@ func DefaultParams() Params {
 		RetreatHP:     0.32,
 		ReturnHP:      0.7,
 		LeadDamp:      0.65,
-		GunMaxRange:   156,
+		GunMaxRange:   108,
 		StrafeMin:     0.35,
 		StrafeMax:     1.1,
 		LootRadius:    146,
