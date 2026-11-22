@@ -6,10 +6,10 @@ import "math"
 const (
 	// ourFightGrab: practice squad stance, mid-fight: take a laser within 70 m when we have none,
 	// or any wanted weapon within 40 m while a slot is empty.
-	ourFightGrab = true
+	ourFightGrab = false
 	// ourLaserFirst: practice squad stance, before 120 s and without a laser: do not start fights
 	// with mechs that are not on us, and look for a laser up to 300 m away.
-	ourLaserFirst = false
+	ourLaserFirst = true
 	// ourLightBack: no lightning of our own and a carrier inside its arc range + 12 m:
 	// walk straight away from it (boosting when we can), and skip cubes it guards.
 	ourLightBack = false
