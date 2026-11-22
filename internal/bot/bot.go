@@ -211,7 +211,7 @@ func DefaultParams() Params {
 		FFALootRadius: 87,
 		FFAWantCubes:  10,
 		FFAReturnFire: 230,
-		CloseDisengage: 0.8,
+		CloseDisengage: 0.65,
 		DuelDisengage:  0.36,
 		UseRoofs:       false,
 		RoofMaxClimb:   40,
