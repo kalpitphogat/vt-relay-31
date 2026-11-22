@@ -289,7 +289,7 @@ func DefaultParams() Params {
 		BrawlRoofAfter:    83,
 		LeadPersist:       true,
 		LeadCum:           false,
-		LeadCumMin:        4.18,
+		LeadCumMin:        3.51,
 		PathFix:           true,
 		CreditFix:         true,
 		LootBoost:         15,
