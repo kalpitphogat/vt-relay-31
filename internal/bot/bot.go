@@ -198,7 +198,7 @@ func DefaultParams() Params {
 		GunMaxRange:   329,
 		StrafeMin:     0.15,
 		StrafeMax:     1.62,
-		LootRadius:    299,
+		LootRadius:    383,
 		WantCubes:     15,
 		DropGreed:     0.68,
 		Hunt:          true,
