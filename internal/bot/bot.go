@@ -212,7 +212,7 @@ func DefaultParams() Params {
 		FFAWantCubes:  10,
 		FFAReturnFire: 148,
 		CloseDisengage: 0.47,
-		DuelDisengage:  0.36,
+		DuelDisengage:  0.29,
 		UseRoofs:       false,
 		RoofMaxClimb:   28,
 		RoofMinHeight:  12,
@@ -225,7 +225,7 @@ func DefaultParams() Params {
 		LeaveTTD:       10.87,
 		UseHideMap:     false, // stealth hideouts: unused by the brawl stance (kept for the variants)
 		HideSeenW:      0.52,
-		HideHitW:       0.52,
+		HideHitW:       0.32,
 		HideDistW:      0.16,
 		HideClimbW:     0.5,
 		HideStick:      10,
