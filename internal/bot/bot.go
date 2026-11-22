@@ -216,7 +216,7 @@ func DefaultParams() Params {
 		UseRoofs:       false,
 		RoofMaxClimb:   28,
 		RoofMinHeight:  12,
-		RoofMinZone:    60,
+		RoofMinZone:    41,
 		ArmRadius:      91,
 		OpenSecs:       27,
 		CreditOpenS:    37,
