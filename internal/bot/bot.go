@@ -309,7 +309,7 @@ func DefaultParams() Params {
 		LaserEarlyRel:    true,
 		RearBonus:        0.21,
 		CookoffBonus:     0.30,
-		CautiousT:        265,
+		CautiousT:        196,
 		BeamFFA:          false,
 		FinalHold:        true,
 		// Apex-Go v3 verified winners (4.99 192m grand, 6.00 TR_HK1, 9,070 dealt, 3.87x trade, 8 alive wins)
