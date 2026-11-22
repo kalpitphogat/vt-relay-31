@@ -307,7 +307,7 @@ func DefaultParams() Params {
 		AntiLightningPad: 12,
 		SmartFireV2:      true,
 		LaserEarlyRel:    true,
-		RearBonus:        0.25,
+		RearBonus:        0.16,
 		CookoffBonus:     0.33,
 		CautiousT:        178,
 		BeamFFA:          false,
