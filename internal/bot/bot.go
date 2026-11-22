@@ -305,7 +305,7 @@ func DefaultParams() Params {
 		// Apex-Go v2 verified winners (#1 6.28 official; 4.70 192m grand; 8.35 FFA)
 		AntiLightningW:   142,
 		AntiLightningPad: 17,
-		SmartFireV2:      true,
+		SmartFireV2:      false,
 		LaserEarlyRel:    true,
 		RearBonus:        0.1,
 		CookoffBonus:     0.26,
