@@ -5,7 +5,7 @@ import "math"
 // Anti-lightning, our own take on the idea measured by Apex-Go v2 (MIT, ahmad-ovh): lightning carriers were a
 // quarter of the deaths of bots like ours. Keep clear of every visible lightning carrier, back straight off when one
 // gets close, and do not walk to cubes it guards. 0 = off.
-const antiLightW = 1.5
+const antiLightW = 2.0
 
 // antiLightPad: back straight off when a carrier is within its arc range plus this many metres (Apex uses 12).
 const antiLightPad = 12.0
@@ -86,4 +86,4 @@ var _ = math.Abs
 
 // beamLead: how far ahead (s) we lead a moving target with the hitscan laser and lightning. A beam fires on the next
 // tick, so Apex-Go leads by one tick (0.05 s); the base bot used 0.125 s.
-const beamLead = 0.125
+const beamLead = 0.05
