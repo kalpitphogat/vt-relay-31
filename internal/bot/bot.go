@@ -260,7 +260,7 @@ func DefaultParams() Params {
 		// against 66%) but gives up a quarter of the early lasers, and in the re-enactment the deaths
 		// only move from before 30 s to after it: about +0.1 points by the real-match index. Against
 		// the practice squad it costs 0.4, hence the SlotRule it would need.
-		ShyRange:          304,
+		ShyRange:          446,
 		ShyLaser:          56,
 		ShyMem:            4.46,
 		// RetreatRunMax 50 / RetreatRunLaser 90 (variant b-standrun) is not on: the real matches favour it
