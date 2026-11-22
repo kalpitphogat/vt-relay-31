@@ -274,7 +274,7 @@ func DefaultParams() Params {
 		CoverEdgeAdv:      3.0,
 		PeekCover:         25,
 		PeekReach:         9,
-		PeekMinRange:      45,
+		PeekMinRange:      37,
 		RoofCoverHold:     6,
 		RoofStandCheck:    true,
 		DropStick:         true,
@@ -309,7 +309,7 @@ func DefaultParams() Params {
 		LaserEarlyRel:    true,
 		RearBonus:        0.25,
 		CookoffBonus:     0.2,
-		CautiousT:        265,
+		CautiousT:        374,
 		BeamFFA:          true,
 		FinalHold:        true,
 		// Apex-Go v3 verified winners (4.99 192m grand, 6.00 TR_HK1, 9,070 dealt, 3.87x trade, 8 alive wins)
