@@ -196,7 +196,7 @@ func DefaultParams() Params {
 		ReturnHP:      0.85,
 		LeadDamp:      0.65,
 		GunMaxRange:   224,
-		StrafeMin:     0.35,
+		StrafeMin:     0.25,
 		StrafeMax:     1.1,
 		LootRadius:    220,
 		WantCubes:     15,
