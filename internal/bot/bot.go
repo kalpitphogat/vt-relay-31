@@ -279,7 +279,7 @@ func DefaultParams() Params {
 		RoofStandCheck:    true,
 		DropStick:         true,
 		RoofLeaveQuiet:    25,
-		ClimbClearRange:   150,
+		ClimbClearRange:   111,
 		BrawlRoofs:        true,
 		LaserPreempt:      true,
 		LaserAimRange:     285,
