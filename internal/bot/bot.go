@@ -292,7 +292,7 @@ func DefaultParams() Params {
 		LeadCumMin:        8,
 		PathFix:           true,
 		CreditFix:         true,
-		LootBoost:         24,
+		LootBoost:         15,
 		ProvokeRule:       true,
 		PlinkMaxDPS:       84,
 		HuntRange:         176,
