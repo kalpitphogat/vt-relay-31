@@ -308,7 +308,7 @@ func DefaultParams() Params {
 		SmartFireV2:      true,
 		LaserEarlyRel:    true,
 		RearBonus:        0.25,
-		CookoffBonus:     0.30,
+		CookoffBonus:     0.2,
 		CautiousT:        265,
 		BeamFFA:          true,
 		FinalHold:        true,
