@@ -313,7 +313,7 @@ func DefaultParams() Params {
 		BeamFFA:          false,
 		FinalHold:        false,
 		// Apex-Go v3 verified winners (4.99 192m grand, 6.00 TR_HK1, 9,070 dealt, 3.87x trade, 8 alive wins)
-		LaserCDTrack: true,
+		LaserCDTrack: false,
 		RearAvoidW:   51,
 		CoverReload:  true,
 		RetreatPest:  false,
