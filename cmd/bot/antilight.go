@@ -5,7 +5,7 @@ import "math"
 // Anti-lightning, our own take on the idea measured by Apex-Go v2 (MIT, ahmad-ovh): lightning carriers were a
 // quarter of the deaths of bots like ours. Keep clear of every visible lightning carrier, back straight off when one
 // gets close, and do not walk to cubes it guards. 0 = off.
-const antiLightW = 1.0
+const antiLightW = 2.0
 
 // lightningCarriers returns the visible enemy mechs holding lightning.
 func (b *Bot) lightningCarriers() []*Track {
