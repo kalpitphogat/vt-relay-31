@@ -232,7 +232,7 @@ func DefaultParams() Params {
 		StealthFightRange: 140,
 		QuietHoldS:        2.47,
 		LaserValue:        4.03,
-		LightningValue:    5.2,
+		LightningValue:    4.17,
 		ArmSwapMin:        1.0,
 		HitModel:          1,
 		PlanV2:            true,
