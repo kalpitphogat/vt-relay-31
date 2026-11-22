@@ -313,7 +313,7 @@ func (b *Bot) think(act *proto.Action) {
 			default:
 				wantFight = true
 			}
-		case st.hunt && tgt.adv >= st.engageRatio && tgt.d < huntR && tgt.tr.LOS && hpFrac > 0.6 &&
+		case st.hunt && b.ffaHuntOK(st, tgt) && tgt.adv >= st.engageRatio && tgt.d < huntR && tgt.tr.LOS && hpFrac > 0.6 &&
 			// (real matches: the one who fires first comes out ahead only with a laser against none:
 			// 11.1 final points against the victim's 9.1; level otherwise, and 2 points behind when it
 			// is the victim that has the laser)
