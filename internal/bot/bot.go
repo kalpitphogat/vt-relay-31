@@ -290,7 +290,7 @@ func DefaultParams() Params {
 		LeadPersist:       true,
 		LeadCum:           false,
 		LeadCumMin:        3.51,
-		PathFix:           true,
+		PathFix:           false,
 		CreditFix:         true,
 		LootBoost:         12,
 		ProvokeRule:       true,
