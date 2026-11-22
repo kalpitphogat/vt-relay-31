@@ -210,7 +210,7 @@ func DefaultParams() Params {
 		FFADisengage:  0.95,
 		FFALootRadius: 140,
 		FFAWantCubes:  10,
-		FFAReturnFire: 230,
+		FFAReturnFire: 164,
 		CloseDisengage: 0.8,
 		DuelDisengage:  0.5,
 		UseRoofs:       true,
@@ -243,7 +243,7 @@ func DefaultParams() Params {
 		BrawlEngage:       1.3,
 		BrawlDisengage:    1.08,
 		BrawlHunt:         false,
-		BrawlLootRadius:   148,
+		BrawlLootRadius:   212,
 		BrawlWantCubes:    10, // stats stop growing at 10 cubes; size (and so how easy we are to hit) does not
 		AvoidRange:        68,
 		AvoidCover:        78,
