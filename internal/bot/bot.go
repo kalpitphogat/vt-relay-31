@@ -278,7 +278,7 @@ func DefaultParams() Params {
 		RoofCoverHold:     5.08,
 		RoofStandCheck:    true,
 		DropStick:         true,
-		RoofLeaveQuiet:    19,
+		RoofLeaveQuiet:    27,
 		ClimbClearRange:   150,
 		BrawlRoofs:        true,
 		LaserPreempt:      true,
@@ -309,7 +309,7 @@ func DefaultParams() Params {
 		LaserEarlyRel:    true,
 		RearBonus:        0.1,
 		CookoffBonus:     0.33,
-		CautiousT:        178,
+		CautiousT:        142,
 		BeamFFA:          false,
 		FinalHold:        true,
 		// Apex-Go v3 verified winners (4.99 192m grand, 6.00 TR_HK1, 9,070 dealt, 3.87x trade, 8 alive wins)
