@@ -193,7 +193,7 @@ func DefaultParams() Params {
 		EngageRatio:   1.25,
 		DisengageRat:  0.75,
 		RetreatHP:     0.45,
-		ReturnHP:      0.85,
+		ReturnHP:      0.7,
 		LeadDamp:      0.65,
 		GunMaxRange:   224,
 		StrafeMin:     0.35,
