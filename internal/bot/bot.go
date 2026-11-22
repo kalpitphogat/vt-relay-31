@@ -215,7 +215,7 @@ func DefaultParams() Params {
 		DuelDisengage:  0.5,
 		UseRoofs:       true,
 		RoofMaxClimb:   40,
-		RoofMinHeight:  12,
+		RoofMinHeight:  8,
 		RoofMinZone:    41,
 		ArmRadius:      110,
 		OpenSecs:       24,
