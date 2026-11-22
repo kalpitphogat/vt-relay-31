@@ -311,7 +311,7 @@ func DefaultParams() Params {
 		CookoffBonus:     0.26,
 		CautiousT:        142,
 		BeamFFA:          false,
-		FinalHold:        true,
+		FinalHold:        false,
 		// Apex-Go v3 verified winners (4.99 192m grand, 6.00 TR_HK1, 9,070 dealt, 3.87x trade, 8 alive wins)
 		LaserCDTrack: true,
 		RearAvoidW:   51,
