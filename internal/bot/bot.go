@@ -278,7 +278,7 @@ func DefaultParams() Params {
 		RoofCoverHold:     4.63,
 		RoofStandCheck:    true,
 		DropStick:         false,
-		RoofLeaveQuiet:    25,
+		RoofLeaveQuiet:    19,
 		ClimbClearRange:   89,
 		BrawlRoofs:        true,
 		LaserPreempt:      false,
