@@ -8,7 +8,7 @@ import "math"
 const antiLightW = 2.0
 
 // antiLightPad: back straight off when a carrier is within its arc range plus this many metres (Apex uses 12).
-const antiLightPad = 16.0
+const antiLightPad = 9.0
 
 // lightningCarriers returns the visible enemy mechs holding lightning.
 func (b *Bot) lightningCarriers() []*Track {
