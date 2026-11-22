@@ -242,7 +242,7 @@ func DefaultParams() Params {
 		AvoidAdv:          0.89,
 		BrawlEngage:       0.67,
 		BrawlDisengage:    0.75,
-		BrawlHunt:         true,
+		BrawlHunt:         false,
 		BrawlLootRadius:   176,
 		BrawlWantCubes:    10, // stats stop growing at 10 cubes; size (and so how easy we are to hit) does not
 		AvoidRange:        85,
