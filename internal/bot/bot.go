@@ -296,7 +296,7 @@ func DefaultParams() Params {
 		ProvokeRule:       true,
 		PlinkMaxDPS:       73,
 		HuntRange:         130,
-		HuntRangeLaser:    187,
+		HuntRangeLaser:    114,
 		KiteMin:        130,
 		KiteMax:        190,
 		PatientCubes:   10,
