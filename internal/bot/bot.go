@@ -293,7 +293,7 @@ func DefaultParams() Params {
 		PathFix:           true,
 		CreditFix:         true,
 		LootBoost:         38,
-		ProvokeRule:       true,
+		ProvokeRule:       false,
 		PlinkMaxDPS:       60,
 		HuntRange:         130,
 		HuntRangeLaser:    130,
