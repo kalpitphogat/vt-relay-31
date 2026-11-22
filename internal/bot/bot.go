@@ -233,7 +233,7 @@ func DefaultParams() Params {
 		QuietHoldS:        3,
 		LaserValue:        4.55,
 		LightningValue:    2.6,
-		ArmSwapMin:        1.0,
+		ArmSwapMin:        0.69,
 		HitModel:          1,
 		PlanV2:            true,
 		KiteNeedsLaser:    true,
