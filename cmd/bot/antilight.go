@@ -8,7 +8,7 @@ import "math"
 const antiLightW = 2.0
 
 // antiLightPad: back straight off when a carrier is within its arc range plus this many metres (Apex uses 12).
-const antiLightPad = 12.0
+const antiLightPad = 6.0
 
 // lightningCarriers returns the visible enemy mechs holding lightning.
 func (b *Bot) lightningCarriers() []*Track {
@@ -86,4 +86,4 @@ var _ = math.Abs
 
 // beamLead: how far ahead (s) we lead a moving target with the hitscan laser and lightning. A beam fires on the next
 // tick, so Apex-Go leads by one tick (0.05 s); the base bot used 0.125 s.
-const beamLead = 0.125
+const beamLead = 0.05
