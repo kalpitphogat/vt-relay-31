@@ -225,7 +225,7 @@ func DefaultParams() Params {
 		LeaveTTD:       17,
 		UseHideMap:     false, // stealth hideouts: unused by the brawl stance (kept for the variants)
 		HideSeenW:      0.25,
-		HideHitW:       1.37,
+		HideHitW:       0.98,
 		HideDistW:      0.22,
 		HideClimbW:     0.5,
 		HideStick:      20,
@@ -289,7 +289,7 @@ func DefaultParams() Params {
 		BrawlRoofAfter:    54,
 		LeadPersist:       true,
 		LeadCum:           false,
-		LeadCumMin:        2.14,
+		LeadCumMin:        2.83,
 		PathFix:           false,
 		CreditFix:         true,
 		LootBoost:         12,
