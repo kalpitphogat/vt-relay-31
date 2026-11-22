@@ -262,7 +262,7 @@ func DefaultParams() Params {
 		// the practice squad it costs 0.4, hence the SlotRule it would need.
 		ShyRange:          220,
 		ShyLaser:          60,
-		ShyMem:            6,
+		ShyMem:            4.46,
 		// RetreatRunMax 50 / RetreatRunLaser 90 (variant b-standrun) is not on: the real matches favour it
 		// (one attacker inside 60 m, shot back: alive 20 s later 35% staying against 23% running),
 		// every simulator here puts it 0.1-0.2 points behind, and either way it is a small thing.
