@@ -246,7 +246,7 @@ func DefaultParams() Params {
 		BrawlLootRadius:   220,
 		BrawlWantCubes:    10, // stats stop growing at 10 cubes; size (and so how easy we are to hit) does not
 		AvoidRange:        85,
-		AvoidCover:        55,
+		AvoidCover:        34,
 		ZoneSlack:         10,
 		CoverFirst:        true,
 		NoMortar:          true, // a laser hit on a mortar carrier does 60% more (seen: 1,024 health gone in 0.7 s)
