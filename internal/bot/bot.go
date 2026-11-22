@@ -217,7 +217,7 @@ func DefaultParams() Params {
 		RoofMaxClimb:   40,
 		RoofMinHeight:  5.38,
 		RoofMinZone:    41,
-		ArmRadius:      110,
+		ArmRadius:      89,
 		OpenSecs:       24,
 		CreditOpenS:    25,
 		DropRadius:     300,
