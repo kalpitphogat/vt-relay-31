@@ -22,6 +22,3 @@ const (
 // gearFightGrab: during a fight, while the second weapon slot is empty, go take any wanted weapon pickup within
 // this many metres (automata gear_grab_r). 0 = off.
 const gearFightGrab = 40.0
-
-// noFightCube: in practice, keep fighting instead of detouring to cubes mid-fight.
-const noFightCube = true
