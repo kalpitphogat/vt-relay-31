@@ -210,7 +210,7 @@ func DefaultParams() Params {
 		FFADisengage:  1.16,
 		FFALootRadius: 176,
 		FFAWantCubes:  10,
-		FFAReturnFire: 230,
+		FFAReturnFire: 177,
 		CloseDisengage: 1.19,
 		DuelDisengage:  0.5,
 		UseRoofs:       false,
