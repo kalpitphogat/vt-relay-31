@@ -260,7 +260,7 @@ func DefaultParams() Params {
 		// against 66%) but gives up a quarter of the early lasers, and in the re-enactment the deaths
 		// only move from before 30 s to after it: about +0.1 points by the real-match index. Against
 		// the practice squad it costs 0.4, hence the SlotRule it would need.
-		ShyRange:          220,
+		ShyRange:          264,
 		ShyLaser:          60,
 		ShyMem:            6,
 		// RetreatRunMax 50 / RetreatRunLaser 90 (variant b-standrun) is not on: the real matches favour it
@@ -294,7 +294,7 @@ func DefaultParams() Params {
 		CreditFix:         true,
 		LootBoost:         30,
 		ProvokeRule:       true,
-		PlinkMaxDPS:       60,
+		PlinkMaxDPS:       73,
 		HuntRange:         130,
 		HuntRangeLaser:    187,
 		KiteMin:        130,
