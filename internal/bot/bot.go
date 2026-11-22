@@ -276,7 +276,7 @@ func DefaultParams() Params {
 		PeekReach:         12.86,
 		PeekMinRange:      37,
 		RoofCoverHold:     4.63,
-		RoofStandCheck:    true,
+		RoofStandCheck:    false,
 		DropStick:         false,
 		RoofLeaveQuiet:    19,
 		ClimbClearRange:   89,
