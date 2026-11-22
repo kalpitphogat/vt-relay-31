@@ -230,7 +230,7 @@ func DefaultParams() Params {
 		HideClimbW:     0.5,
 		HideStick:      20,
 		StealthFightRange: 205,
-		QuietHoldS:        3,
+		QuietHoldS:        4.38,
 		LaserValue:        3.67,
 		LightningValue:    2.6,
 		ArmSwapMin:        0.55,
