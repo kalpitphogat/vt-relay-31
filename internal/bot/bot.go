@@ -231,7 +231,7 @@ func DefaultParams() Params {
 		HideStick:      12,
 		StealthFightRange: 140,
 		QuietHoldS:        3,
-		LaserValue:        6.0,
+		LaserValue:        8.99,
 		LightningValue:    2.6,
 		ArmSwapMin:        1.0,
 		HitModel:          1,
