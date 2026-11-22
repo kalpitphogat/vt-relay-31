@@ -294,7 +294,7 @@ func DefaultParams() Params {
 		CreditFix:         true,
 		LootBoost:         30,
 		ProvokeRule:       true,
-		PlinkMaxDPS:       86,
+		PlinkMaxDPS:       125,
 		HuntRange:         130,
 		HuntRangeLaser:    189,
 		KiteMin:        110,
