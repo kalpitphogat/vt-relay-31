@@ -281,7 +281,7 @@ func DefaultParams() Params {
 		RoofLeaveQuiet:    27,
 		ClimbClearRange:   150,
 		BrawlRoofs:        true,
-		LaserPreempt:      true,
+		LaserPreempt:      false,
 		LaserAimRange:     285,
 		AvoidCoverLaser:   112,
 		BrawlRoofCubes:    6,
