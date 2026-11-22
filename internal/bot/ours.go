@@ -130,12 +130,3 @@ func (b *Bot) lightBack(rq *steerReq) bool {
 	}
 	return true
 }
-
-// ffaHuntOK: in a free-for-all, stay passive (no chasing) until 4 mechs remain or 6:00,
-// except to finish off a mech that is nearly dead. Practice (squad stance) is unchanged.
-func (b *Bot) ffaHuntOK(st stance, tgt *threat) bool {
-	if b.squadPractice(st) || b.o.Alive <= 4 || b.t >= 360 {
-		return true
-	}
-	return tgt.tr.MaxHP > 0 && tgt.tr.HP < 0.3*tgt.tr.MaxHP
-}
