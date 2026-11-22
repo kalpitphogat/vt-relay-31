@@ -130,3 +130,6 @@ func (b *Bot) lightBack(rq *steerReq) bool {
 	}
 	return true
 }
+
+// ourNoFightCube: practice squad stance: keep fighting instead of detouring to cubes mid-fight.
+const ourNoFightCube = true
